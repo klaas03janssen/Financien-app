@@ -13,7 +13,7 @@ uploaded_file = st.file_uploader("Upload je CSV bestand", type=['csv'])
 if uploaded_file is not None:
     # --- DEEL 2: LOGICA (Jouw Code) ---
     try:
-        MIJN_SPAARREKENING = "NL33RABO3633840621" 
+        MIJN_SPAARREKENING = st.secrets["SPAARREKENING_NUMMER"]
         
         df = pd.read_csv(uploaded_file, sep=',', encoding='ISO-8859-1')
         
